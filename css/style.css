@@ -1,0 +1,984 @@
+/**********************************/
+/********** General CSS ***********/
+/**********************************/
+body {
+    color: #666666;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    background: #ffffff;
+}
+
+a {
+    color: #3F69AA;
+    transition: 0.5s;
+}
+
+a:hover,
+a:active,
+a:focus {
+    color: #666666;
+    outline: none;
+    text-decoration: none;
+}
+
+p {
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #666666;
+    margin: 0 0 15px 0;
+    padding: 0;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    background: #961792;
+    color: #ffffff;
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    line-height: 1;
+    font-size: 16px;
+    border-radius: 50%;
+    right: 15px;
+    bottom: 15px;
+    transition: background 0.5s;
+    z-index: 11;
+}
+
+.back-to-top i {
+    padding-top: 12px;
+    color: #ffffff;
+}
+
+
+/**********************************/
+/********* Header Nav CSS *********/
+/**********************************/
+#header {
+    padding: 30px 0;
+    height: 92px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    transition: all 0.5s;
+    z-index: 997;
+}
+
+#header.header-scrolled {
+    background: rgba(150, 23, 146, .9);
+    padding: 10px 0;
+    height: 72px;
+    transition: all 0.5s;
+}
+
+#header #logo {
+    float: left;
+}
+
+#header #logo img {
+    padding: 0;
+    margin: 0;
+    max-height: 50px;
+}
+
+#nav-menu-container {
+    float: right;
+    margin: 0;
+}
+
+.nav-menu,
+.nav-menu * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-menu li {
+    position: relative;
+    float: left;
+    margin: 10px 10px 0 10px;
+    white-space: nowrap;
+}
+
+.nav-menu a {
+    padding: 0 0 3px 0;
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    outline: none;
+}
+
+.nav-menu a::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: #000000;
+    opacity: 0;
+    transition: .3s;
+}
+
+.nav-menu li:hover > a,
+.nav-menu > .menu-active > a {
+    color: #f3ff47;
+}
+
+.nav-menu li:hover > a::after,
+.nav-menu > .menu-active > a::after {
+    opacity: 1;
+}
+
+#mobile-nav-toggle {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 999;
+    margin: 20px 20px 0 0;
+    border: 0;
+    background: none;
+    font-size: 24px;
+    display: none;
+    transition: all 0.4s;
+    outline: none;
+    cursor: pointer;
+}
+
+#mobile-nav-toggle i {
+    color: #fff;
+}
+
+#mobile-nav {
+    position: fixed;
+    top: 0;
+    padding-top: 30px;
+    bottom: 0;
+    z-index: 998;
+    background: rgba(0, 0, 0, 0.8);
+    left: -100%;
+    width: 100%;
+    text-align: center;
+    overflow-y: auto;
+    transition: 0.4s;
+}
+
+#mobile-nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+#mobile-nav ul li {
+    position: relative;
+}
+
+#mobile-nav ul li a {
+    color: #ffffff;
+    font-size: 16px;
+    text-transform: uppercase;
+    overflow: hidden;
+    padding: 10px 15px;
+    position: relative;
+    text-decoration: none;
+    width: 100%;
+    display: block;
+    outline: none;
+    font-weight: 600;
+}
+
+#mobile-nav ul li a:hover {
+    color: #3F69AA;
+}
+
+#mobile-nav ul li.menu-active a {
+    color: #3F69AA;
+}
+
+#mobile-body-overly {
+    width: 100%;
+    height: 100%;
+    z-index: 997;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+}
+
+body.mobile-nav-active {
+    overflow: hidden;
+}
+
+body.mobile-nav-active #mobile-nav {
+    left: 0;
+}
+
+body.mobile-nav-active #mobile-nav-toggle {
+    color: #fff;
+}
+
+@media (min-width: 992px) {
+    #header #logo {
+        padding-left: 60px;
+    }
+
+    #nav-menu-container {
+        padding-right: 60px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    #nav-menu-container {
+        display: none;
+    }
+
+    #mobile-nav-toggle {
+        display: inline;
+    }
+}
+
+
+
+/**********************************/
+/******** Header Carousel *********/
+/**********************************/
+#header-carousel {
+    display: table;
+    width: 100%;
+    height: 75vh;
+    background: #000;
+}
+
+#header-carousel .carousel-item {
+    width: 100%;
+    height: 75vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#header-carousel .carousel-item::before {
+    content: '';
+    background: rgba(150, 23, 146, .5);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+#header-carousel .carousel-container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#header-carousel .carousel-background img {
+    max-width: 100%;
+}
+
+#header-carousel .carousel-content {
+    max-width: 70%;
+    text-align: center;
+}
+
+#header-carousel h2 {
+    color: #ffffff;
+    margin-bottom: 30px;
+    font-size: 64px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+#header-carousel p {
+    width: 80%;
+    margin: 0 auto 30px auto;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+#header-carousel .carousel-control-prev,
+#header-carousel .carousel-control-next {
+    width: 10%;
+}
+
+#header-carousel .carousel-control-next-icon,
+#header-carousel .carousel-control-prev-icon {
+    width: 100%;
+    height: 60px;
+    padding: 15px;
+    background: #961792;
+    font-size: 32px;
+    line-height: 1;
+}
+
+#header-carousel .carousel-control-next-icon {
+    border-radius: 50px 0 0 50px;
+}
+
+#header-carousel .carousel-control-prev-icon {
+    border-radius: 0 50px 50px 0;
+}
+
+#header-carousel .carousel-indicators li {
+    width: 15px;
+    height: 15px;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#header-carousel .btn-get-started {
+    display: inline-block;
+    padding: 18px 40px;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.5s;
+     background: #961792;
+    color: #f4ff5c;
+    border-radius: 50px;
+}
+
+#header-carousel .btn-get-started:hover {
+    color: #961792;
+    background: #f4ff5c;
+   
+}
+
+@media (max-width: 991.98px) {
+    #header-carousel .carousel-content {
+        max-width: 70%;
+    }
+
+    #header-carousel h2 {
+        margin-bottom: 15px;
+        font-size: 45px;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    #header-carousel p {
+        margin: 0 auto 15px auto;
+        font-size: 18px;
+        font-weight: 400;
+    }
+    
+    #header-carousel .btn-get-started {
+        padding: 12px 25px;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    #header-carousel .carousel-content {
+        max-width: 80%;
+    }
+
+    #header-carousel h2 {
+        margin-bottom: 15px;
+        font-size: 35px;
+        font-weight: 600;
+        letter-spacing: 0;
+    }
+
+    #header-carousel p {
+        margin: 0 auto 15px auto;
+        font-size: 16px;
+        font-weight: 400;
+    }
+    
+    #header-carousel .btn-get-started {
+        padding: 10px 25px;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0;
+    }
+}
+
+@media (max-width: 575.98px) {
+    #header-carousel .carousel-content {
+        max-width: 90%;
+    }
+
+    #header-carousel h2 {
+        margin-bottom: 15px;
+        font-size: 24px;
+        font-weight: 600;
+        letter-spacing: 0;
+    }
+
+    #header-carousel p {
+        margin: 0 auto 15px auto;
+        font-size: 15px;
+        font-weight: 400;
+    }
+    
+    #header-carousel .btn-get-started {
+        padding: 5px 15px;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0;
+    }
+}
+
+
+
+/**********************************/
+/******* Section Header CSS *******/
+/**********************************/
+.section-header {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+}
+
+.section-header h2,
+.section-header h3 {
+    position: relative;
+    color: #961792;
+    font-size: 35px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: capitalize;
+    padding-bottom: 15px;
+}
+
+.section-header h2::after,
+.section-header h3::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 5px;
+    left: calc(50% - 25px);
+    bottom: 0;
+    background: #961792;
+}
+
+.section-header p {
+    font-size: 16px;
+    font-weight: 300;
+    text-align: center;
+    margin: 0
+}
+
+
+
+/**********************************/
+/********** About Us CSS **********/
+/**********************************/
+#about {
+    position: relative;
+    padding: 60px 0 0 0;
+    margin-bottom: -30px;
+}
+
+#about .row {
+    margin-bottom: 30px;
+}
+
+#about .welcome {
+    max-width: 900px;
+    text-align: center;
+}
+
+#about .welcome h2 {
+    color: #3F69AA;
+    font-size: 35px;
+    font-weight: 700;
+    padding-bottom: 15px;
+}
+
+#about .welcome h2:after {
+    position: absolute;
+    content: "";
+    width: 50px;
+    height: 3px;
+    top: 50px;
+    left: calc(50% - 25px);
+    background: #3F69AA;
+}
+
+#about .welcome p {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+#about .welcome a {
+    padding: 6px 25px;
+    color: #3F69AA;
+    letter-spacing: 1px;
+    background: #ffffff;
+    border: 2px solid #3F69AA;
+    border-radius: 50px;
+}
+
+#about .welcome a:hover {
+    color: #ffffff;
+    background: #3F69AA;
+}
+
+#about .about-col {
+    height: inherit;
+    background: #961792;
+}
+
+#about .about-col:nth-child(2) {
+    background: #222222;
+}
+
+#about .about-content {
+    position: relative;
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+}
+
+#about .about-content i {
+    color: #ffffff;
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+#about .about-content h2 {
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+#about .about-content p, label {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+
+
+/**********************************/
+/********** Service CSS ***********/
+/**********************************/
+#services {
+    padding: 60px 0 30px 0;
+    background: #ffffff;
+}
+
+#services .service-col {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    background: #f1f1f1;
+    border-radius: 80px 5px 5px 80px;
+}
+
+#services .service-detail {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    background: rgba(150, 23, 146, .92);
+    padding: 5px 5px 5px 30px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 23px;
+}
+
+#services .service-col:hover .service-detail {
+    transition: .5s;
+    left: 0;
+}
+
+#services .service-icon {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    float: left;
+    margin-right: 15px;
+    text-align: center;
+    padding: 16px 0;
+    border: 3px solid #961792;
+    border-radius: 80px;
+}
+
+#services .service-icon i {
+    font-size: 40px;
+    color: #961792;
+}
+
+#services .service-col h3 {
+    color: #961792;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 27px 0;
+}
+
+#services .service-col p {
+    margin-bottom: 0;
+}
+
+
+
+/**********************************/
+/********* Portfolio CSS **********/
+/**********************************/
+#portfolio {
+    position: relative;
+    clear: both;
+    padding: 60px 0;
+}
+
+#portfolio .section-header p {
+    margin-bottom: 30px;
+}
+
+#portfolio .portfolio-flters {
+    padding: 0;
+    margin: 0 0 25px 0;
+    list-style: none;
+    text-align: center;
+}
+
+#portfolio .portfolio-flters li {
+    position: relative;
+    margin: 0 7px 5px 7px;
+    display: inline-block;
+    padding: 17px 0 4px 0;
+    color: #3F69AA;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+#portfolio .portfolio-flters li::before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    top: 0;
+    left: calc(50% - 12px);
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 15px solid #3F69AA;
+    border-radius: 50%;
+    transition: .3s;
+    opacity: 0;
+}
+
+#portfolio .portfolio-flters li::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: #3F69AA;
+    border-radius: 5px;
+    transition: .3s;
+    opacity: 0;
+}
+
+#portfolio .portfolio-flters li:hover::before,
+#portfolio .portfolio-flters li.filter-active::before,
+#portfolio .portfolio-flters li:hover::after,
+#portfolio .portfolio-flters li.filter-active::after {
+    opacity: 1;
+}
+
+#portfolio .portfolio-container .col-lg-4,
+#portfolio .portfolio-container .col-md-4 {
+    padding: 0;
+}
+
+#portfolio .portfolio-item {
+    position: relative;
+    overflow: hidden;
+}
+
+#portfolio .portfolio-item figure {
+    background: #3F69AA;
+    overflow: hidden;
+    position: relative;
+    border-radius: 0;
+    margin: 0;
+}
+
+#portfolio .portfolio-item figure:hover img {
+    opacity: 0.3;
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+#portfolio .portfolio-item figure .link-preview,
+#portfolio .portfolio-item figure .link-details,
+#portfolio .portfolio-item figure .portfolio-title {
+    position: absolute;
+    display: inline-block;
+    opacity: 0;
+    line-height: 1;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    background: #ffffff;
+    border-radius: 50px;
+    transition: 0.2s linear;
+}
+
+#portfolio .portfolio-item figure .link-preview i,
+#portfolio .portfolio-item figure .link-details i {
+    padding: 12px 0;
+    font-size: 24px;
+}
+
+#portfolio .portfolio-item figure .link-preview:hover,
+#portfolio .portfolio-item figure .link-details:hover {
+    background: #3F69AA;
+}
+
+#portfolio .portfolio-item figure .link-preview:hover i,
+#portfolio .portfolio-item figure .link-details:hover i {
+    color: #ffffff;
+}
+
+#portfolio .portfolio-item figure .link-preview {
+    left: calc(50% - 55px);
+    top: 0;
+}
+
+#portfolio .portfolio-item figure .link-details {
+    right: calc(50% - 55px);
+    top: 0;
+}
+
+#portfolio .portfolio-item figure .portfolio-title {
+    margin: 0;
+    width: 100%;
+    height: 50%;
+    left: 0;
+    right: 0;
+    top: 100%;
+    padding: 30px 10px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: capitalize;
+    background: none;
+    border-radius: 0;
+}
+
+#portfolio .portfolio-item figure .portfolio-title span {
+    display: block;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+#portfolio .portfolio-item figure:hover .link-preview {
+    opacity: 1;
+    top: 25%;
+}
+
+#portfolio .portfolio-item figure:hover .link-details {
+    opacity: 1;
+    top: 25%;
+}
+
+#portfolio .portfolio-item figure:hover .portfolio-title {
+    opacity: 1;
+    top: 50%;
+}
+
+
+
+
+
+/**********************************/
+/********** Contact CSS ***********/
+/**********************************/
+#contact {
+    position: relative;
+    padding: 60px 0;
+}
+
+#contact .container {
+    max-width: 900px;
+}
+
+#contact .contact-info img {
+    max-width: 100%;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+#contact .contact-info p {
+    margin-bottom: 5px;
+    color: #961792;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+#contact .contact-info p i {
+    color: #3F69AA;
+    margin-right: 5px;
+}
+
+#contact .social {
+    position: relative;
+    width: 100%;
+}
+
+#contact .social a {
+    display: inline-block;
+    margin: 10px 10px 0 0;
+    width: 40px;
+    height: 40px;
+    padding: 3px 0;
+    text-align: center;
+    font-size: 20px;
+    border: 2px solid #3F69AA;
+    border-radius: 30px;
+}
+
+#contact .social a i {
+    color: #3F69AA;
+}
+
+#contact .social a:hover {
+    background: #3F69AA;
+}
+
+#contact .social a:hover i {
+    color: #ffffff;
+}
+
+#contact .form {
+    color: #666666;
+    font-weight: 300;
+}
+
+@media (max-width: 767.98px) {
+    #contact .form {
+        margin-bottom: 30px;
+    }
+}
+
+#contact .form input,
+#contact .form textarea {
+    color: #666666;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 10px 15px;
+    border: none;
+    border: 2px solid #3F69AA;
+    border-radius: 20px;
+    box-shadow: none;
+}
+
+#contact .form input:focus,
+#contact .form textarea:focus {
+    box-shadow: 0 0 5px #3F69AA;
+}
+
+#contact .form button[type="submit"] {
+    padding: 6px 25px 7px 25px;
+    color: #3F69AA;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    cursor: pointer;
+    border-radius: 30px;
+    border: 2px solid #3F69AA;
+    background: #ffffff;
+}
+
+#contact .form button[type="submit"]:hover {
+    background: #3F69AA;
+    color: #FFFFFF;
+}
+
+
+
+/**********************************/
+/********** Footer CSS ************/
+/**********************************/
+#footer {
+    position: relative;
+    padding: 30px 0;
+    background: #961792;
+}
+
+#footer .col-md-6:first-child p {
+    text-align: left;
+}
+
+#footer .col-md-6:last-child p {
+    text-align: right;
+}
+
+@media (max-width: 767.98px) {
+    #footer .col-md-6:first-child p,
+    #footer .col-md-6:last-child p {
+        text-align: center;
+    }
+}
+
+#footer p {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+}
+
+#footer p a {
+    font-weight: 700;
+    color: #f4ff5c;
+}
+/*
+#footer p a:hover {
+    color: #ffffff;
+}
+*/
